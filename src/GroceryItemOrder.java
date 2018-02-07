@@ -1,9 +1,9 @@
 public class GroceryItemOrder {
     private String name;
     private int quantity;
-    private double price;
+    private int price;
 
-    public GroceryItemOrder(String name, int quantity, double price) {
+    public GroceryItemOrder(String name, int quantity, int price) {
         this.name = name;
         this.quantity = quantity;
         this.price = price;
@@ -22,7 +22,7 @@ public class GroceryItemOrder {
         return quantity;
     }
 
-    public double getPrice() {
+    public int getPrice() {
         return price;
     }
 
@@ -34,20 +34,18 @@ public class GroceryItemOrder {
         this.quantity = quantity;
     }
 
-    public void setPrice(double price) {
+    public void setPrice(int price) {
         this.price = price;
     }
 
-    public double getCost() {
+    public int getCost() {
         return this.price * this.quantity;
     }
 
     @Override
     public String toString() {
-        return "GroceryItemOrder{" +
-                "name='" + this.name + '\'' +
-                ", quantity=" + this.quantity +
-                ", cost=" + this.getCost() +
-                '}';
+        return "\n\n" + this.name +
+                "\nAmount: " + this.quantity +
+                "\nDKK " + (((double) this.getCost()) / 100);
     }
 }
